@@ -1,50 +1,29 @@
-<hello name="{{ name }}"></hello>
+<hello name="{{name}}"></hello>
+
+<button (click)="isDanger = !isDanger">Toggle Danger</button>
+<button (click)="isWarning = !isWarning">Toggle Warning</button>
+
 <!-- 
-  for(let something of users){}
-
-  - $implicit: item Implicit Context Variable
-  - index: so thu tu cua item hien tai
-  - count: do dai cua array
-  - first: true neu nhu item do la item dau tien trong array
-  - last: true neu nhu item do la item cuoi cung trong array
-  - even: true neu nhu item do la item vi tri chan
-  - odd: true neu nhu item do la item vi tri le
+  - [class.name-class]
+  - [class]="array"
+  - [class]="object" { [ten-class]: boolean }
+  - [class]="variable"
  -->
-<!-- <ul>
-	<li
-		*ngFor="let user of users; index as idx; count as total; first as First; last as Last; even as isEven; odd as isOdd">
-		<span>{{ user.id }} - {{ user.name }} - {{ user.phone }}</span>
-		<br> <br>
-		<span>at index {{idx}} out of {{total}}</span>
-		<br>
-		<span *ngIf="isEven">I am even Number</span>
-		<br>
-		<span *ngIf="isOdd">I am odd Number</span>
-		<br>
-		<span *ngIf="First">I am First</span>
-		<br>
-		<span *ngIf="Last">I am Last</span>
-	</li>
-</ul> -->
 
-<ul>
-	<ng-template ngFor [ngForOf]="users" let-user let-idx="index" let-total="count" let-isFirst="first"
-		let-isLast="last" let-isEven="even" let-isOdd="odd">
-		<li>
-			<span>{{ user.id }} - {{ user.name }} - {{ user.phone }}</span>
-			<br> <br>
-			<span>at index {{idx}} out of {{total}}</span>
-			<br>
-			<span *ngIf="isEven">I am even Number</span>
-			<br>
-			<span *ngIf="isOdd">I am odd Number</span>
-			<br>
-			<span *ngIf="isFirst">I am First</span>
-			<br>
-			<span *ngIf="isLast">I am Last</span>
-		</li>
-	</ng-template>
-</ul>
-<img [class.avatar]="users" [src]="imagePath"/>
+<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning"></div>
+<!-- <div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div> -->
 
-<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">{{tag}}</button>
+<!-- 
+  - [style.tenStyle]
+  - [style.ten-style]
+  - [style.tenStyle.unit]
+  - [style]="object"
+ -->
+
+<p [style.color]="'red'" [style.background-color]="'yellow'" [style.fontSize.px]="'12'">
+	Start editing to see some magic happen;
+</p>
+
+<p [style.--text-color]="isDanger ? 'red' : 'blue'" [style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '1rem'}">
+	Start editing to see some magic happen;
+</p>
