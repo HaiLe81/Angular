@@ -7,6 +7,7 @@ import { Component, VERSION } from "@angular/core";
 })
 export class AppComponent {
   name = "Angular " + VERSION.major;
+  imagePath = "https://scontent-xsp1-2.xx.fbcdn.net/v/t1.0-9/p960x960/100600056_2637786416498469_378609957076992_o.jpg?_nc_cat=100&_nc_sid=85a577&_nc_ohc=XTTu-DzfOgsAX9QwRTu&_nc_ht=scontent-xsp1-2.xx&_nc_tp=6&oh=a0eb44a6aed4d1a1d82a02fa10c56463&oe=5F4A4C89"
   users = [
     {
       id: 1,

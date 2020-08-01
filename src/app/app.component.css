@@ -4,3 +4,7 @@ p {
 .right-margin {
   margin-right: 5px;
 }
+.avatar {
+  height: 50px;
+  width: 50px;
+}
