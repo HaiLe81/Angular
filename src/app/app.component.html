@@ -1,4 +1,30 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+{{ name }}
+<hello [hidden]="user.age <= 18" [name]="user.name"></hello>
+
+<ng-template #under18>
+  <div>
+    You are too young to see this content!
+  </div>
+</ng-template>
+
+<button (click)="user.age = user.age - 1">Decrease</button>
+Age: {{ user.age }}
+<button (click)="user.age = user.age + 1">Increase</button>
+
+<!-- {{ expression }} -->
+<p>{{ user.name }}</p>
+<p>{{ user.age }}</p>
+<p>using *ngFor</p>
+<ul *ngFor="let hero of heroes">
+	<li>
+		{{ hero }}
+	</li>
+</ul>
+<p>using *ngIf and *ngFor</p>
+<ul *ngFor="let hero of heroes">
+  <li  *ngIf="hero === 'Hai Le'">{{ hero }}</li>
+</ul>
+<input type="text" [value]="" placeholder="Enter your name" />
+<button type="button" (click)="handler($event)" >Click Me</button>
+<br>
+<input type="text" [(ngModel)]="name" (ngModelChange)="name = $event" />
