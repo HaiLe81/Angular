@@ -11,4 +11,10 @@ export class AppComponent {
   isDanger = false;
   isWarning = false;
   classes="box red-danger yellow-background"
+  value = '';
+  onKey(value: any){
+    if(value.trim() === '') return;
+    this.value += value + ' | ' ;
+  }
+
 }

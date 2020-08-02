@@ -27,3 +27,9 @@
 <p [style.--text-color]="isDanger ? 'red' : 'blue'" [style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '1rem'}">
 	Start editing to see some magic happen;
 </p>
+
+<input #inut (keyup.enter)="onKey(inut.value)" />
+<p>{{ value }}</p>
+<br>
+<input #phone (keyup)="0"/>
+<p>{{ phone.value }}</p>
