@@ -1,35 +1,7 @@
 <hello name="{{name}}"></hello>
 
-<button (click)="isDanger = !isDanger">Toggle Danger</button>
-<button (click)="isWarning = !isWarning">Toggle Warning</button>
-
-<!-- 
-  - [class.name-class]
-  - [class]="array"
-  - [class]="object" { [ten-class]: boolean }
-  - [class]="variable"
- -->
-
-<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning"></div>
-<!-- <div class="box" [class]="{'red-border': isDanger, 'yellow-background': isWarning}"></div> -->
-
-<!-- 
-  - [style.tenStyle]
-  - [style.ten-style]
-  - [style.tenStyle.unit]
-  - [style]="object"
- -->
-
-<p [style.color]="'red'" [style.background-color]="'yellow'" [style.fontSize.px]="'12'">
-	Start editing to see some magic happen;
-</p>
-
-<p [style.--text-color]="isDanger ? 'red' : 'blue'" [style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '1rem'}">
-	Start editing to see some magic happen;
-</p>
-
-<input #inut (keyup.enter)="onKey(inut.value)" />
-<p>{{ value }}</p>
+<input type="number" #number (keyup.enter)="onKeyup(number.value)">
 <br>
-<input #phone (keyup)="0"/>
-<p>{{ phone.value }}</p>
+<progress-bar></progress-bar>
+<br>
+<progress-bar [progress]="currentProgress" [progressColor]="'blue'"></progress-bar>
