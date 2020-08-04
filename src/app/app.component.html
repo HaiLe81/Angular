@@ -4,5 +4,7 @@
 </p>
 
 <input type="text" [(ngModel)]="name">
-
-<toggle [(checked)]="isChecked"></toggle>
+<!-- toggleComp la instance cua ToggleComponent -->
+<toggle #toggleComp [(checked)]="isChecked"></toggle>
+<br>
+<button (click)="toggleComp.toggle()">Change Color</button>
