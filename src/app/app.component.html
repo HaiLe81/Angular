@@ -1,10 +1,18 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+	Start editing to see some magic happen :)
 </p>
 
-<input type="text" [(ngModel)]="name">
+<input #nameInput type="text" [(ngModel)]="name">
+<button (click)="showlast = !showlast">Toggle show last</button>
 <!-- toggleComp la instance cua ToggleComponent -->
-<toggle #toggleComp [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
+<ng-container *ngIf="showlast">
+	<toggle [(checked)]="isChecked"></toggle>
+</ng-container>
 <br>
-<button (click)="toggleComp.toggle()">Change Color</button>
+<button #toggleBtn>Toggle Me</button>
+<br>
+<!-- <button (click)="toggleComp.toggle()">Change Color</button> -->
